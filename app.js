@@ -3,7 +3,7 @@ let computerScore = 0;
 const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const scoreBoard_div = document.querySelector('.score-board');
-const result_div = document.querySelector('.result');
+const result_p = document.querySelector('.result > p');
 const rock_div = document.getElementById('rock');
 const paper_div = document.getElementById('paper');
 const scissors_div = document.getElementById('scissors');
@@ -14,18 +14,26 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function win() {
+function capitalizeWord(letter) {
+    if (letter === 'rock') return 'Rock';
+    if (letter === 'paper') return 'Paper';
+    if (letter === 'scissors') return 'Scissors';
+}
+
+function win(user, computer) {
     userScore++;
     userScore_span.innerHTML = userScore;
+    result_p.innerHTML = `${capitalizeWord(user)} beats ${capitalizeWord(computer)}. You win!`;
 }
 
-function lose() {
+function lose(user, computer) {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = `${capitalizeWord(user)} beats ${capitalizeWord(computer)}. Computer wins.`;
 }
 
-function draw() {
-    console.log('draw');
+function draw(user, computer) {
+    result_p.innerHTML = `${capitalizeWord(user)} matches ${capitalizeWord(computer)}. Nobody wins.`;
 }
 
 function game(userChoice) {
@@ -34,17 +42,17 @@ function game(userChoice) {
         case 'rockscissors':
         case 'paperrock':
         case 'scissorspaper':
-            win();
+            win(userChoice, computerChoice);
             break;
         case 'rockpaper':
         case 'paperscissors':
         case 'scissorsrock':
-            lose();
+            lose(userChoice, computerChoice);
             break;
         case 'rockrock':
         case 'paperpaper':
         case 'scissorsscissors':
-            draw();
+            draw(userChoice, computerChoice);
             break;
     }
 }

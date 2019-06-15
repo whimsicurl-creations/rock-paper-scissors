@@ -29,7 +29,7 @@ function win(user, computer) {
 function lose(user, computer) {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${capitalizeWord(user)} beats ${capitalizeWord(computer)}. Computer wins.`;
+    result_p.innerHTML = `${capitalizeWord(user)} loses to ${capitalizeWord(computer)}. Computer wins.`;
 }
 
 function draw(user, computer) {

@@ -70,11 +70,52 @@ header h1 {
     margin: 0 20px;
     padding: 10px;
     transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.middle {
+    opacity: 0;
+    position: absolute;
+    top: 38%;
+}
+
+#mid-rock {
+    left: 27%;
+}
+
+#mid-paper {
+    left: 23%;
+}
+
+#mid-scissors {
+    left: 15%;
+}
+
+#mid-lizard {
+    left: 21%;
+}
+
+#mid-spock {
+    left: 22%;
 }
 
 .choice:hover {
     cursor: pointer;
     transform: scale(1.2);
+}
+
+.choice:hover img {
+    opacity: 0.3;
+}
+
+.choice:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
 }
 
 #action-message {

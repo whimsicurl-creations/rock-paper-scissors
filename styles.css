@@ -85,16 +85,26 @@ header h1 {
 
 #rules {
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #rules h2 {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
     text-decoration: underline;
     margin-bottom: 5px;
 }
 
 #rules p {
+    font-size: 18px;
     line-height: 1.5;
+}
+
+#bbt-link {
+    margin-bottom: 10px;
+}
+
+#bbt-link a {
+    color: #CACECA;
+    font-size: 14px;
 }
